@@ -59,6 +59,7 @@ class ItemSchema(Schema):
 
     links = fields.Nested(LinkSchema, many=True)
     properties = fields.Nested(PropertiesSchema)
+    bbox = fields.List(fields.Float())
     geometry = fields.Dict()
     id = fields.Str()
     assets = fields.Nested(AssetSchema, many=True)
