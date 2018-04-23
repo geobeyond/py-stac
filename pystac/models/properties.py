@@ -8,32 +8,29 @@ from marshmallow import (
 class Properties(STACObject):
     def __init__(self, start, end,
                  provider, asset_license,
-                 eo_properties):
-        """Container for storing required and optional properties
+                 ext_properties):
+        """Container for providing the core metatdata fields plus extensions
 
         Args:
-            start (datetime):
-            end (datetime):
+            datetime (datetime):
             provider (str):
             asset_license (str):
-            eo_properties (dict):
+            ext_properties (dict):
         """
-        self.eo_properties = eo_properties
+        self.ext_properties = ext_properties
         self.license = asset_license
         self.provider = provider
-        self.end = end
-        self.start = start
+        self.datetime = datetime
 
     @property
     def dict(self):
         base_properties = dict(
             license=self.license,
             provider=self.provider,
-            end=self.end,
-            start=self.start
+            datetime=self.datetime
         )
-        if self.eo_properties:
-            base_properties.update(self.eo_properties)
+        if self.ext_properties:
+            base_properties.update(self.ext_properties)
         return base_properties
     
     @property
@@ -47,6 +44,5 @@ class PropertiesSchema(Schema):
 
     license = fields.Str()
     provider = fields.Str()
-    eo_properties = fields.Dict()
-    end = fields.DateTime()
-    start = fields.DateTime()
+    ext_properties = fields.Dict()
+    datetime = fields.DateTime()
