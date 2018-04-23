@@ -6,21 +6,27 @@ from marshmallow import (
 
 
 class Link(STACObject):
-    def __init__(self, link_type, href):
-        """Link to related objects, must have a type and href
+    def __init__(self, link_type, rel, href, hreflang):
+        """Link to related objects, must have an href optionally type
 
         Args:
-            link_type (str): only two types (self and thumbnail)
-            href (str): location
+            type (str): only one type (self)
+            rel (str): self
+            href (str): uri location
+            hreflang (str): uri language
         """
-        self.link_type = link_type
+        self.type = link_type
+        self.rel = rel
         self.href = href
+        self.hreflang = hreflang
 
     @property
     def dict(self):
         return dict(
-            type=self.link_type,
-            href=self.href
+            type=self.type,
+            rel=self.rel,
+            href=self.href,
+            hreflang=self.hreflang
         )
 
     @property
@@ -33,4 +39,6 @@ class Link(STACObject):
 class LinkSchema(Schema):
 
     link_type = fields.Str()
+    rel = fields.Str()
     href = fields.Str() #  TBD with fields.URL()
+    hreflang = fields.Str()
