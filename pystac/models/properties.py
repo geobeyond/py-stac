@@ -6,7 +6,7 @@ from marshmallow import (
 
 
 class Properties(STACObject):
-    def __init__(self, start, end,
+    def __init__(self, datetime,
                  provider, asset_license,
                  ext_properties):
         """Container for providing the core metatdata fields plus extensions
