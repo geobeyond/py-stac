@@ -23,7 +23,7 @@ class Item(STACObject):
             geometry (Polygon):
             properties (Properties):
             links (List[Link]):
-            assets (List[Asset]):
+            assets (Dict[Asset]):
         """
         self.links = links
         self.properties = properties
@@ -45,7 +45,7 @@ class Item(STACObject):
             geometry=self.geometry,
             bbox=self.bbox,
             links=[link.dict for link in self.links],
-            assets=[asset.dict for asset in self.assets]
+            assets={k_asset:v_asset for (k_asset,v_asset) in self.assets.items()}
         )
     
     @property
@@ -62,4 +62,4 @@ class ItemSchema(Schema):
     bbox = fields.List(fields.Float())
     geometry = fields.Dict()
     id = fields.Str()
-    assets = fields.Nested(AssetSchema, many=True)
+    assets = fields.Dict(key=fields.Str(), values=fields.Nested(AssetSchema))
