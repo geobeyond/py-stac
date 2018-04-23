@@ -1,6 +1,7 @@
 import geojson
 from geojson import Polygon
 
+from pystac.models.geojson_type import GeojsonType
 from pystac.models.asset import AssetSchema
 from pystac.models.base import STACObject
 from pystac.models.link import LinkSchema
@@ -11,7 +12,7 @@ from marshmallow import (
 )
 
 
-class Feature(STACObject):
+class Item(STACObject):
     def __init__(self, item_id,
                  geometry, properties,
                  links, assets):
@@ -38,7 +39,7 @@ class Feature(STACObject):
     @property
     def dict(self):
         return dict(
-            type='Feature',
+            type=GeojsonType.Feature,
             id=self.id,
             properties=self.properties.dict,
             geometry=self.geometry,
@@ -49,12 +50,12 @@ class Feature(STACObject):
     
     @property
     def json(self):
-        return FeatureSchema().dumps(
+        return ItemSchema().dumps(
             self
         )
 
 
-class FeatureSchema(Schema):
+class ItemSchema(Schema):
 
     links = fields.Nested(LinkSchema, many=True)
     properties = fields.Nested(PropertiesSchema)
