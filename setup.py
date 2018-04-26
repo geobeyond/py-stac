@@ -19,9 +19,11 @@ with open('HISTORY.rst') as history_file:
 
 setup(
     name='stacpy',
-    version='0.1.4',
-    description=("Python command line and library utilities for interacting"
-                 "with and creating STAC compliant files."),
+    version='0.1.5',
+    description=(
+        "Python command line and library utilities for interacting"
+        "with and creating STAC compliant files."
+    ),
     long_description=readme + '\n\n' + history,
     author="Raster Foundry",
     author_email='info@rasterfoundry.com',
@@ -57,6 +59,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
