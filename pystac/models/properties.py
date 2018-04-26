@@ -6,13 +6,15 @@ from marshmallow import (
 
 
 class Properties(STACObject):
-    def __init__(self, datetime,
-                 provider, asset_license,
-                 ext_properties):
+    def __init__(
+        self, datetime,
+        provider, asset_license,
+        ext_properties
+    ):
         """Container for providing the core metatdata fields plus extensions
 
         Args:
-            datetime (datetime):
+            datetime (str):
             provider (str):
             asset_license (str):
             ext_properties (dict):
@@ -45,4 +47,4 @@ class PropertiesSchema(Schema):
     license = fields.Str()
     provider = fields.Str()
     ext_properties = fields.Dict()
-    datetime = fields.DateTime()
+    datetime = fields.Str()
