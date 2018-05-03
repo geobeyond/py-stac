@@ -42,7 +42,7 @@ setup(
         'Click>=6.0',
         'geojson==2.3.0',
         'requests==2.18.0',
-        'marshmallow==3.0.0b8',
+        'marshmallow==3.0.0b9',
         'typing==3.6.2;python_version<"3.5"'
     ],
     license="Apache Software License 2.0",
