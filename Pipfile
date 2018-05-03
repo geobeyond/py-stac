@@ -10,7 +10,7 @@ click = "*"
 geojson = "*"
 requests = "*"
 typing = "*"
-marshmallow = "==3.0.0b8"
+marshmallow = "==3.0.0b9"
 
 [dev-packages]
 "flake8" = "*"
@@ -18,6 +18,7 @@ tox = "*"
 coverage = "*"
 sphinx = "*"
 ipython = "*"
+"autopep8" = "*"
 
 [requires]
 python_version = "2.7.14"
