@@ -4,4 +4,4 @@
 
 __author__ = """Raster Foundry"""
 __email__ = 'info@rasterfoundry.com'
-__version__ = '0.1.0'
+__version__ = '0.1.7'
