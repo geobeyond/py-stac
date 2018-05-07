@@ -13,9 +13,11 @@ from marshmallow import (
 
 
 class Item(STACObject):
-    def __init__(self, item_id,
-                 geometry, properties,
-                 links, assets):
+    def __init__(
+        self, item_id,
+        geometry, properties,
+        links, assets
+    ):
         """STAC Catalog item
 
         Args:
@@ -45,9 +47,9 @@ class Item(STACObject):
             geometry=self.geometry,
             bbox=self.bbox,
             links=[link.dict for link in self.links],
-            assets={k_asset:v_asset for (k_asset,v_asset) in self.assets.items()}
+            assets={k_asset: v_asset for (k_asset, v_asset) in self.assets.items()}
         )
-    
+
     @property
     def json(self):
         return ItemSchema().dumps(
