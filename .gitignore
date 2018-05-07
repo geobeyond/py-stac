@@ -44,6 +44,7 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
+.pytest_cache/
 
 # Translations
 *.mo
@@ -62,3 +63,4 @@ target/
 .python-version
 /pystac.iml
 .idea/*
+.vscode/*
