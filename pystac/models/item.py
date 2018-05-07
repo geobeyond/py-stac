@@ -39,9 +39,13 @@ class Item(STACObject):
         return [min(lats), min(lngs), max(lats), max(lngs)]
 
     @property
+    def type(self):
+        return GeojsonType.Feature.value
+
+    @property
     def dict(self):
         return dict(
-            type=GeojsonType.Feature,
+            type=self.type,
             id=self.id,
             properties=self.properties.dict,
             geometry=self.geometry,
@@ -59,6 +63,7 @@ class Item(STACObject):
 
 class ItemSchema(Schema):
 
+    type = fields.Str()
     links = fields.Nested(LinkSchema, many=True)
     properties = fields.Nested(PropertiesSchema)
     bbox = fields.List(fields.Float())
