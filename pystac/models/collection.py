@@ -16,9 +16,13 @@ class Collection(STACObject):
         self.features = features
 
     @property
+    def type(self):
+        return GeojsonType.FeatureCollection.value
+
+    @property
     def dict(self):
         return dict(
-            type=GeojsonType.FeatureCollection,
+            type=self.type,
             features=[feature.dict for feature in self.features]
         )
 
@@ -31,4 +35,5 @@ class Collection(STACObject):
 
 class CollectionSchema(Schema):
 
+    type = fields.Str()
     features = fields.Nested(ItemSchema, many=True)
