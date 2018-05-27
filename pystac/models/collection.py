@@ -24,7 +24,7 @@ class Collection(STACObject):
     def dict(self):
         return dict(
             type=self.type,
-            id=self.id
+            id=self.id,
             features=[feature.dict for feature in self.features]
         )
 
