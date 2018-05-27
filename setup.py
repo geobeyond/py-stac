@@ -19,7 +19,7 @@ with open('HISTORY.rst') as history_file:
 
 setup(
     name='stacpy',
-    version='0.1.8',
+    version='0.1.9',
     description=(
         "Python command line and library utilities for interacting"
         "with and creating STAC compliant files."
