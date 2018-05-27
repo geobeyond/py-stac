@@ -6,7 +6,7 @@ from pystac.models.base import STACObject
 
 class Collection(STACObject):
     def __init__(
-        self, features
+        self, features, collection_id
     ):
         """STAC Catalog item collection
 
@@ -14,6 +14,7 @@ class Collection(STACObject):
             features (List[Item]):
         """
         self.features = features
+        self.id = collection_id
 
     @property
     def type(self):
@@ -23,6 +24,7 @@ class Collection(STACObject):
     def dict(self):
         return dict(
             type=self.type,
+            id=self.id
             features=[feature.dict for feature in self.features]
         )
 
@@ -36,4 +38,5 @@ class Collection(STACObject):
 class CollectionSchema(Schema):
 
     type = fields.Str()
+    id = fields.Str()
     features = fields.Nested(ItemSchema, many=True)
