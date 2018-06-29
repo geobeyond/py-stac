@@ -10,7 +10,7 @@ click = "*"
 geojson = "*"
 requests = "*"
 typing = "*"
-marshmallow = "==3.0.0b9"
+marshmallow = "*"
 
 [dev-packages]
 "flake8" = "*"
@@ -22,3 +22,6 @@ ipython = "*"
 
 [requires]
 python_version = "2.7.14"
+
+[pipenv]
+allow_prereleases = true

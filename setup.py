@@ -41,8 +41,8 @@ setup(
         'rasterio==1.0a12',
         'Click>=6.0',
         'geojson==2.3.0',
-        'requests==2.18.0',
-        'marshmallow==3.0.0b9',
+        'requests>=2.18.0',
+        'marshmallow==3.0.0b11',
         'typing==3.6.2;python_version<"3.5"'
     ],
     license="Apache Software License 2.0",
