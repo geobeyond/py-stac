@@ -43,7 +43,7 @@ setup(
         'geojson==2.3.0',
         'requests>=2.18.0',
         'marshmallow==3.0.0b11',
-        'typing==3.6.2;python_version<"3.5"'
+        'typing==3.6.2;python_version<="3.6"'
     ],
     license="Apache Software License 2.0",
     zip_safe=False,

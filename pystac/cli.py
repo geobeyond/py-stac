@@ -3,7 +3,7 @@
 """Console script for pystac."""
 
 import click
-from .iserv.iserv import cli as iserv
+# from .iserv.iserv import cli as iserv
 
 
 @click.group()
@@ -14,7 +14,7 @@ def main(args=None):
     click.echo("See click documentation at http://click.pocoo.org/")
 
 
-main.add_command(iserv)
+# main.add_command(iserv)
 
 if __name__ == "__main__":
     main()

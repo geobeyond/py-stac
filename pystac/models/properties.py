@@ -34,7 +34,7 @@ class Properties(STACObject):
         if self.ext_properties:
             base_properties.update(self.ext_properties)
         return base_properties
-    
+
     @property
     def json(self):
         return PropertiesSchema().dumps(

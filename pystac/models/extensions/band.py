@@ -34,7 +34,7 @@ class Band(STACObject):
             effective_bandwidth=self.effective_bandwidth,
             image_band_index=self.image_band_index
         )
-    
+
     @property
     def json(self):
         return BandSchema().dumps(

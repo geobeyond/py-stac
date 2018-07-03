@@ -17,8 +17,9 @@ marshmallow = "*"
 tox = "*"
 coverage = "*"
 sphinx = "*"
-ipython = "*"
 "autopep8" = "*"
+pytest = "*"
+ipython = "*"
 
 [requires]
 python_version = "2.7.14"

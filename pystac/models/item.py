@@ -1,6 +1,4 @@
 import geojson
-from geojson import Polygon
-
 from pystac.models.geojson_type import GeojsonType
 from pystac.models.asset import AssetSchema
 from pystac.models.base import STACObject

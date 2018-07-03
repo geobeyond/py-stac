@@ -14,7 +14,6 @@ class Asset(STACObject):
         self.name = name
         self.href = href
 
-
     @property
     def dict(self):
         base_properties = dict(
@@ -24,7 +23,6 @@ class Asset(STACObject):
             base_properties['name'] = self.name
 
         return base_properties
-
 
     @property
     def json(self):
@@ -36,4 +34,4 @@ class Asset(STACObject):
 class AssetSchema(Schema):
 
     name = fields.Str()
-    href = fields.Str() #  TBD fields.URL()
+    href = fields.Str()  # TBD fields.URL()

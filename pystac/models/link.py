@@ -40,5 +40,5 @@ class LinkSchema(Schema):
 
     link_type = fields.Str()
     rel = fields.Str()
-    href = fields.Str() #  TBD with fields.URL()
+    href = fields.Str()   # TBD with fields.URL()
     hreflang = fields.Str()
