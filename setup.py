@@ -18,21 +18,21 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 setup(
-    name='stacpy',
+    name='py-stac',
     version='0.2.1',
     description=(
         "Python command line and library utilities for interacting"
         "with and creating STAC compliant files."
     ),
     long_description=readme + '\n\n' + history,
-    author="Raster Foundry",
-    author_email='info@rasterfoundry.com',
-    url='https://github.com/geobeyond/pystac',
+    author="Geobeyond",
+    author_email='info@geobeyond.it',
+    url='https://github.com/geobeyond/py-stac',
     packages=find_packages(),
-    py_modules=[splitext(basename(path))[0] for path in glob('pystac/*.py')],
+    py_modules=[splitext(basename(path))[0] for path in glob('stac/*.py')],
     entry_points={
         'console_scripts': [
-            'pystac=pystac.cli:main'
+            'stac=stac.cli:main'
         ]
     },
     include_package_data=True,
@@ -49,6 +49,7 @@ setup(
     zip_safe=False,
     keywords=[
         'pystac',
+        'py-stac',
         'imagery',
         'raster',
         'catalog',

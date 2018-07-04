@@ -1,5 +1,5 @@
-from pystac.models.band import BandSchema
-from pystac.models.base import STACObject
+from stac.models.band import BandSchema
+from stac.models.base import STACObject
 from marshmallow import (
     Schema,
     fields

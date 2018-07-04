@@ -1,28 +1,24 @@
-============
-PySTAC Tools
-============
+=============
+Py-STAC Tools
+=============
 
 
-.. image:: https://img.shields.io/pypi/v/pystac.svg
-        :target: https://pypi.python.org/pypi/pystac
+.. image:: https://img.shields.io/pypi/v/py-stac.svg
+        :target: https://pypi.python.org/pypi/py-stac
 
-.. image:: https://img.shields.io/travis/notthatbreezy/pystac.svg
-        :target: https://travis-ci.org/notthatbreezy/pystac
+.. image:: https://img.shields.io/travis/geobeyond/py-stac.svg
+        :target: https://travis-ci.org/geobeyond/py-stac
 
-.. image:: https://readthedocs.org/projects/pystac/badge/?version=latest
-        :target: https://pystac.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/py-stac/badge/?version=latest
+        :target: https://py-stac.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
-
-.. image:: https://pyup.io/repos/github/notthatbreezy/pystac/shield.svg
-     :target: https://pyup.io/repos/github/notthatbreezy/pystac/
-     :alt: Updates
 
 
 Python command line utilities for interacting with and creating STAC compliant files.
 
 
 * Free software: Apache Software License 2.0
-* Documentation: https://pystac.readthedocs.io.
+* Documentation: https://py-stac.readthedocs.io.
 
 
 Features

@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use PySTAC Tools in a project::
+To use Py-STAC Tools in a project::
 
-    import pystac
+    import py-stac

@@ -1,9 +1,9 @@
 import geojson
-from pystac.models.geojson_type import GeojsonType
-from pystac.models.asset import AssetSchema
-from pystac.models.base import STACObject
-from pystac.models.link import LinkSchema
-from pystac.models.properties import PropertiesSchema
+from stac.models.geojson_type import GeojsonType
+from stac.models.asset import AssetSchema
+from stac.models.base import STACObject
+from stac.models.link import LinkSchema
+from stac.models.properties import PropertiesSchema
 from marshmallow import (
     Schema,
     fields

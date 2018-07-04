@@ -4,7 +4,7 @@ include HISTORY.rst
 include LICENSE
 include README.rst
 
-exclude .editorconfig requirements_dev.txt Makefile
+exclude .editorconfig Makefile
 
 graft tests
 graft docs

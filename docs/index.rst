@@ -1,18 +1,18 @@
-Welcome to PySTAC Tools's documentation!
-======================================
+Welcome to Py-STAC Tools's documentation!
+=========================================
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   readme
-   installation
-   usage
-   modules
-   contributing
-   authors
-   history
+    readme
+    installation
+    usage
+    modules
+    contributing
+    authors
+    history
 
 Indices and tables
 ==================

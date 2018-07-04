@@ -1,4 +1,4 @@
-from pystac.models.base import STACObject
+from stac.models.base import STACObject
 from marshmallow import Schema, fields
 
 

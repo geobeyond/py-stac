@@ -1,7 +1,7 @@
 from marshmallow import fields, Schema
-from pystac.models.geojson_type import GeojsonType
-from pystac.models.item import ItemSchema
-from pystac.models.base import STACObject
+from stac.models.geojson_type import GeojsonType
+from stac.models.item import ItemSchema
+from stac.models.base import STACObject
 
 
 class Collection(STACObject):

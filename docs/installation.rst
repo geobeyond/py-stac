@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install PySTAC Tools, run this command in your terminal:
+To install Py-STAC Tools, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install pystac
+    $ pip install py-stac
 
-This is the preferred method to install PySTAC Tools, as it will always install the most recent stable release.
+This is the preferred method to install Py-STAC Tools, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for PySTAC Tools can be downloaded from the `Github repo`_.
+The sources for Py-STAC Tools can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/geobeyond/pystac
+    $ git clone git://github.com/geobeyond/py-stac
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/geobeyond/pystac/tarball/master
+    $ curl  -OL https://github.com/geobeyond/py-stac/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/geobeyond/pystac
-.. _tarball: https://github.com/geobeyond/pystac/tarball/master
+.. _Github repo: https://github.com/geobeyond/py-stac
+.. _tarball: https://github.com/geobeyond/py-stac/tarball/master

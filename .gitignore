@@ -61,6 +61,6 @@ target/
 
 # pyenv python configuration file
 .python-version
-/pystac.iml
+/py-stac.iml
 .idea/*
 .vscode/*

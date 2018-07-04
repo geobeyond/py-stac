@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Console script for pystac."""
+"""Console script for py-stac."""
 
 import click
 # from .iserv.iserv import cli as iserv
@@ -8,9 +8,9 @@ import click
 
 @click.group()
 def main(args=None):
-    """Console script for pystac."""
+    """Console script for py-stac."""
     click.echo("Replace this message by putting your code into "
-               "pystac.cli.main")
+               "stac.cli.main")
     click.echo("See click documentation at http://click.pocoo.org/")
 
 
