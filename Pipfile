@@ -11,6 +11,7 @@ geojson = "*"
 requests = "*"
 typing = "*"
 marshmallow = "*"
+jsonschema = "*"
 
 [dev-packages]
 "flake8" = "*"
