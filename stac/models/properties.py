@@ -11,7 +11,7 @@ class Properties(STACObject):
         provider, asset_license,
         ext_properties
     ):
-        """Container for providing the core metatdata fields plus extensions
+        """Container for providing the core metadata fields plus extensions
 
         Args:
             datetime (str):
