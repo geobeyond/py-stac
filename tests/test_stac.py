@@ -99,4 +99,4 @@ def test_validate_schema_collection(Collection):
 
 
 def test_validate_schema_item(Item):
-    assert assert_valid_item_schema(Item.dict)
+    assert assert_valid_item_schema(Item.json)
