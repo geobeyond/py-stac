@@ -1,8 +1,8 @@
 import geojson
 from stac.models.geojson_type import GeojsonType
-from stac.models.asset import AssetSchema
+from stac.models.asset import AssetValueSchema
 from stac.models.base import STACObject
-from stac.models.link import LinkSchema
+from stac.models.link import LinkValueSchema
 from stac.models.properties import PropertiesSchema
 from marshmallow import (
     Schema,
@@ -22,8 +22,8 @@ class Item(STACObject):
             item_id (str):
             geometry (Polygon):
             properties (Properties):
-            links (List[Link]):
-            assets (Dict[Asset]):
+            links (Dict[Link.link]):
+            assets (Dict[Asset.asset]):
         """
         self.links = links
         self.properties = properties
@@ -48,7 +48,7 @@ class Item(STACObject):
             properties=self.properties.dict,
             geometry=self.geometry,
             bbox=self.bbox,
-            links=[link.dict for link in self.links],
+            links={k_link: v_link for (k_link, v_link) in self.links.items()},
             assets={k_asset: v_asset for (k_asset, v_asset) in self.assets.items()}
         )
 
@@ -62,9 +62,17 @@ class Item(STACObject):
 class ItemSchema(Schema):
 
     type = fields.Str()
-    links = fields.Nested(LinkSchema, many=True)
+    links = fields.Dict(
+        key=fields.Str(),
+        values=fields.Nested(LinkValueSchema),
+        many=True
+    )
     properties = fields.Nested(PropertiesSchema)
     bbox = fields.List(fields.Float())
     geometry = fields.Dict()
     id = fields.Str()
-    assets = fields.Dict(key=fields.Str(), values=fields.Nested(AssetSchema))
+    assets = fields.Dict(
+        key=fields.Str(),
+        values=fields.Nested(AssetValueSchema),
+        many=True
+    )
