@@ -21,6 +21,7 @@ sphinx = "*"
 "autopep8" = "*"
 pytest = "*"
 ipython = "*"
+ipdb = "*"
 
 [requires]
 python_version = "2.7.14"
