@@ -6,28 +6,27 @@ from marshmallow import (
 
 
 class Link(STACObject):
-    def __init__(self, link_type, rel, href, hreflang):
-        """Link to related objects, must have an href optionally type
+    def __init__(self, rel, href, key=None):
+        """Link to related objects, use the rel argument as key
 
         Args:
-            type (str): only one type (self)
             rel (str): self
             href (str): uri location
-            hreflang (str): uri language
+            key (str): key for the link object value (optional)
         """
-        self.type = link_type
-        self.rel = rel
-        self.href = href
-        self.hreflang = hreflang
+
+        if not key:
+            key = rel
+        self.link = {
+            "{0}".format(key): {"rel": rel, "href": href}
+        }
+
+    def __repr__(self):
+        return '<Link(link={self.link!r})>'.format(self=self)
 
     @property
     def dict(self):
-        return dict(
-            type=self.type,
-            rel=self.rel,
-            href=self.href,
-            hreflang=self.hreflang
-        )
+        return dict(link=self.link)
 
     @property
     def json(self):
@@ -36,9 +35,15 @@ class Link(STACObject):
         )
 
 
+class LinkValueSchema(Schema):
+
+    rel = fields.Str(required=True)
+    href = fields.URL(required=True)
+
+
 class LinkSchema(Schema):
 
-    link_type = fields.Str()
-    rel = fields.Str()
-    href = fields.Str()   # TBD with fields.URL()
-    hreflang = fields.Str()
+    link = fields.Dict(
+        values=fields.Nested(LinkValueSchema),
+        key=fields.Str()
+    )
