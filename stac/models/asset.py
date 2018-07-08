@@ -3,26 +3,33 @@ from marshmallow import Schema, fields
 
 
 class Asset(STACObject):
-    def __init__(self, href, name=""):
+    def __init__(self, href, name=None, key=None):
         """Asset referenced by item
 
         Args:
-            href (str): location (full or relative) of asset
-            name (str): human readable name of asset
+            href (str): location (full or relative) of the asset
+            name (str): human readable name of asset (optional)
+            key (str): key for the asset object value (optional)
         """
 
-        self.name = name
-        self.href = href
+        if not key:
+            key = "self"
+            if name:
+                key = name
+
+        if not name:
+            self.asset = {"{0}".format(key): {"href": href}}
+        else:
+            self.asset = {
+                "{0}".format(key): {"name": name, "href": href}
+            }
+
+    def __repr__(self):
+        return '<Asset(asset={self.asset!r})>'.format(self=self)
 
     @property
     def dict(self):
-        base_properties = dict(
-            href=self.href
-        )
-        if self.name:
-            base_properties['name'] = self.name
-
-        return base_properties
+        return dict(asset=self.asset)
 
     @property
     def json(self):
@@ -31,7 +38,15 @@ class Asset(STACObject):
         )
 
 
-class AssetSchema(Schema):
+class AssetValueSchema(Schema):
 
     name = fields.Str()
-    href = fields.Str()  # TBD fields.URL()
+    href = fields.URL(required=True)
+
+
+class AssetSchema(Schema):
+
+    asset = fields.Dict(
+        values=fields.Nested(AssetValueSchema),
+        key=fields.Str()
+    )
