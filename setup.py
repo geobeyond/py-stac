@@ -19,7 +19,7 @@ with open('HISTORY.rst') as history_file:
 
 setup(
     name='py-stac',
-    version='0.2.4',
+    version='0.2.6',
     description=(
         "Python command line and library utilities for interacting"
         "with and creating STAC compliant files."
@@ -42,7 +42,7 @@ setup(
         'Click>=6.0',
         'geojson==2.3.0',
         'requests>=2.18.0',
-        'marshmallow==3.0.0b11',
+        'marshmallow>=3.0.0b12',
         'typing==3.6.2;python_version<="3.6"'
     ],
     license="Apache Software License 2.0",
